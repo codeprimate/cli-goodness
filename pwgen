@@ -1,4 +1,8 @@
 #!/usr/bin/env ruby
+#
+# Password generator
+# Usage:  pwgen 10 => creates a password with 10 characters
+#         pwgen 5 12 => creates 5 passwords of 12 characters
 class PwGen
   def initialize(pw_count,pw_size)
     @pw_size = pw_size

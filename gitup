@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Update Git project and submodules
+
 export T_PWD=`pwd`
 echo "Updating Master Project..."
 git pull

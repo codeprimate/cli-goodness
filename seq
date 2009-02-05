@@ -1,4 +1,5 @@
 #!/usr/bin/ruby
+# Emulates the Linux "seq" command
 
 if ARGV[0] == '-w'
   startx = ARGV[1].to_i
