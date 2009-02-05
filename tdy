@@ -1,0 +1,5 @@
+#!/bin/bash
+
+wget -O /tmp/testfile $1
+tidy -errors /tmp/testfile
+mate /tmp/testfile 

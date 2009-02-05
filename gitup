@@ -1,0 +1,15 @@
+#!/bin/bash
+
+export T_PWD=`pwd`
+echo "Updating Master Project..."
+git pull
+git submodule init
+for x in `git submodule | awk '{print $2}'` 
+	do
+	cd $x
+	echo " - Updating $x"
+	git checkout master
+	git pull
+	cd $T_PWD 
+done
+git submodule update

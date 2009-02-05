@@ -1,0 +1,12 @@
+CLI Goodness!
+
+Checkout this and add the following 2 lines to the end of your ~/.bash_login
+Make sure to change the path in the first line.
+
+ export CLI_GOODNESS="path/to/cli_goodness"
+ source $CLI_GOODNESS/dotfile.sh
+
+
+
+(c)2009 Patrick Morgan and Master Web Design
+MIT License
