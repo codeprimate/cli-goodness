@@ -24,6 +24,10 @@ MIT License
 * dsacopy 
 ****************************************
 
+	a script that streamlines the process of uploading your ssh public key to a remote server
+
+	Usage : dsacopy [host]
+
 ****************************************
 * gte 
 ****************************************
@@ -44,9 +48,17 @@ MIT License
 * tarbz 
 ****************************************
 
+	a script that doesn't require you remember all the switches for creating a bzipped tar archive
+	
+	Usage : tarbz [directory]
+	
 ****************************************
 * targz 
 ****************************************
+
+	a script that doesn't require you remember all the switches for creating a gzipped tar archive
+
+	Usage : targz [directory]
 
 ****************************************
 * tl2 
