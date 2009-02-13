@@ -6,7 +6,7 @@ A script for posting status messages to twitter
 
 Simplify (read: automate) 
 
-Usage: twit [status message] 
+Usage: twit [message] 
 
 	########
 		REQUIRED CONFIG
