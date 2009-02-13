@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby
+#
+#  Created on 2007-11-9.
+#  Copyright (c) 2007. All rights reserved.
+
+begin
+  require 'rubygems'
+rescue LoadError
+  # no rubygems to load, so we fail silently
+end
+
+require 'optparse'
+
+# NOTE: the option -p/--path= is given as an example, and should probably be replaced in your application.
+
+OPTIONS = {
+}
+MANDATORY_OPTIONS = %w(  )
+
+parser = OptionParser.new do |opts|
+  opts.banner = <<BANNER
+Cause when opening a rails application in textmate it's good to filter out certain folders (i.e. logs) Have yoou ever tried to search your application for a word when you have large log files... well, don't
+
+Also because i don't like to litter my finder windows and such with textmate project files just cd project_dir; redit
+
+Usage: #{File.basename($0)} [options]
+
+Options are:
+BANNER
+  opts.separator ""
+  opts.on("-h", "--help",
+          "Show this help message.") { puts opts; exit }
+  opts.parse!(ARGV)
+
+  if MANDATORY_OPTIONS && MANDATORY_OPTIONS.find { |option| OPTIONS[option.to_sym].nil? }
+    puts opts; exit
+  end
+end
+
+system "mate app/ config/ db/ features/ lib/ public/ vendor/plugins/ spec/ test/ README INSTALL TODO"
