@@ -1,0 +1,21 @@
+#!/usr/bin/ruby
+#
+# 
+
+def usage
+  puts "tarbz <tarname> {<direcory>:optional}"
+  exit
+end
+
+if ARGV[0].nil?
+  usage
+end
+
+if ARGV[1].nil?
+  directory = tarname = ARGV[0]
+else
+  tarname = ARGV[0]
+  directory = ARGV[1]
+end
+
+system "tar -cvjf #{tarname}.tar.bz2 #{directory}"
