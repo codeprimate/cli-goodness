@@ -1,0 +1,45 @@
+A collection of helpful automations for working with git
+
+****************************************
+* gitosis 
+****************************************
+
+Simplify (read: automate) the creation of git repos on server using gitosis-admin
+
+Usage: gitosis [options]
+
+Options are:
+    -r, --repo-name=repo             The repository name.
+    -m, --members=members            Members of the repository.
+    -g, --group-name=group           The group name. Defaults to repository name
+    -h, --help                       Show this help message.
+
+	########
+		REQUIRED CONFIG
+			see gitosis_path.txt
+				place here path to your gitosis-admin repo
+			see gitosis_members.txt
+				place here the users list for gitosis admin (space delimited)
+
+****************************************
+* svn2git 
+****************************************
+
+Cleanly migrate an SVN repository to a GIT repository
+this migration is destructive - will no longer be able to update to SVN repo
+
+Usage: svn2git -n RepoName [options]
+
+Options are:
+
+    -n, --name=repo                  The repository name. Assumes svn server defined in env_git
+    -u, --url=repo                   The repository url.
+    -h, --help                       Show this help message.
+
+	########
+		REQUIRED CONFIG
+			see svn_server.txt
+				place here the url to your svn server
+			see gitosis_members.txt
+				place here the mappings for usernames from svn to git(one mapping per line) 
+				(ex: bhedana = Russ Sherman <code-ronin@code-ronin.com>)

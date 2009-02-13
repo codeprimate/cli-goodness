@@ -1,0 +1,5 @@
+#!/bin/bash
+# Add all files and commit using argument as message
+
+git add ./ ; 
+git commit -a -m "$1"
