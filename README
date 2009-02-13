@@ -7,9 +7,10 @@ Make sure to change the path in the first line.
  source $CLI_GOODNESS/dotfile.sh
 
 
+### see readme files in submodule folders for more information
+
 Many of the features of this repo will be documented here
 http://acts-as-coder.blogspot.com
-
 
 (c)2009 Patrick Morgan, Russ Sherman and Master Web Design
 http://www.masterwebdesign.net

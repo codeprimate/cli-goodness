@@ -1,0 +1,71 @@
+#!/usr/bin/ruby
+require "erb"
+
+# a path is not a project dir if
+# .
+# ..
+@ignored_dirs = ['.', '..', '__']
+
+def is_project_dir(x)
+ # puts "checking #{x}"
+  @ignored_dirs.each{ |dir|
+    # puts "  check #{x} for #{dir}"
+    if x.rindex("#{dir}").nil?
+      # puts "    is not ignored dir"      
+    elsif x.rindex("#{dir}") > 1
+      # puts "    is not ignored dir"      
+    else
+      # puts x.rindex("#{dir}")
+      # puts "    is ignored dir"
+      return false      
+    end
+  }
+  
+  #passed ignore dir test
+  #but is it a dir?
+  begin
+    Dir.open("#{@working}/#{x}")
+    return true #is a dir
+  rescue
+    return false #not a dir
+  end
+  
+end
+
+def parse_dir(parsedir)
+  puts "parsing #{parsedir}"
+  unless parsedir.nil? 
+    dirlist = []
+    dir = Dir.open(parsedir.chomp)
+    dir.each{ |x| 
+      if is_project_dir(x)
+        dirlist.push(x)
+      end
+    }
+    puts "Writing new #{ARGV[0]} alias file:"
+    template = ERB.new <<-EOF
+      <% i=0; dirlist.length.times do %>alias <%=dirlist[i]%>="cd <%=parsedir%>/<%=dirlist[i]%>/"
+      <% i+=1; end %>
+    EOF
+    puts template.result(binding)
+    #XXX this only works form home... needs to be changed to work from anywhere
+    
+    path = ENV['PROJECT_ALIASES_PATH']
+    common = File.open("#{path}", "w")
+    common.puts template.result(binding)
+  end
+end
+
+puts ENV['PROJECT_FILES_PATH']
+
+if ARGV[0].nil?
+  ARGV[0] = 'projects'
+  @working = File.read(ENV['PROJECT_FILES_PATH']) if File.exist?(ENV['PROJECT_FILES_PATH'])
+  parse_dir(@working)
+end
+
+#reload changes
+IO.popen "source $PROJECT_ALIASES_PATH"
+
+
+

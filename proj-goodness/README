@@ -1,0 +1,16 @@
+A collection of helpful automations for your projects directory
+
+****************************************
+* upproj 
+****************************************
+
+Simplify (read: automate) the maintenance of a project aliases file 
+reads your project directory and creates an alias for each folder name therein
+run upproj and simple type a project folder name to immediately cd to that folder
+
+Usage: upproj 
+
+	########
+		REQUIRED CONFIG
+			see projects_path.txt
+				place here path to your projects directory

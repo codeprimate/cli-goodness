@@ -7,3 +7,6 @@ source $CLI_GOODNESS/clig_alias_httpd.sh
 
 export GIT_GOODNESS="$CLI_GOODNESS/git-goodness"
 source $GIT_GOODNESS/dotfile.sh
+
+export PROJ_GOODNESS="$CLI_GOODNESS/proj-goodness"
+source $PROJ_GOODNESS/dotfile.sh
