@@ -14,3 +14,12 @@ Usage: upproj
 		REQUIRED CONFIG
 			see projects_path.txt
 				place here path to your projects directory
+				
+****************************************
+* clean_dw_trash 
+****************************************
+
+Simplify (read: automate) the removal of the _notes folders that DreamWeaver likes to put in every single stinking folder of a dreamweaver project
+
+Usage: clean_dw_trash 
+
