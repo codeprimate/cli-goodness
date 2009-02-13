@@ -1,6 +1,26 @@
 A collection of helpful automations for your projects directory
 
 ****************************************
+* progressheader 
+****************************************
+
+****************************************
+* clean_dw_trash 
+****************************************
+
+Simplify (read: automate) the removal of the _notes folders that DreamWeaver likes to put in every single stinking folder of a dreamweaver project
+
+Usage: clean_dw_trash
+
+****************************************
+* unsvn 
+****************************************
+
+Simplify (read: automate) the recursive removal of the svn meta data from current directory
+
+Usage: unsvn
+
+****************************************
 * upproj 
 ****************************************
 
@@ -15,11 +35,5 @@ Usage: upproj
 			see projects_path.txt
 				place here path to your projects directory
 				
-****************************************
-* clean_dw_trash 
-****************************************
 
-Simplify (read: automate) the removal of the _notes folders that DreamWeaver likes to put in every single stinking folder of a dreamweaver project
-
-Usage: clean_dw_trash 
 
