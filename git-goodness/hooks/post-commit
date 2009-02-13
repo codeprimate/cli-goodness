@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# push a message to twitter about this commit
+#
+
+projectdesc=$(sed -e '1q' "$GIT_DIR/description")
+twit "just committed files to $projectdesc"
+
+#
+# push commits
+#
+git push

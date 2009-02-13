@@ -10,7 +10,16 @@ for x in `git submodule | awk '{print $2}'`
 	do
 	cd $x
 	echo " - Updating $x"
+
+	# this block ensures the post commit hook in in place and the repo is properly described
+	cp $GIT_GOODNESS/hooks/post-commit .git/hooks/post-commit
+	chmod +x .git/hooks/post-commit	
+	echo "$x" | awk -F"/" '{print $3}'> .git/description
+	
+	# make sure this submodule has master checked out
 	git checkout master
+	
+	# make sure this submodule is current
 	git pull
 	cd $T_PWD 
 done
