@@ -10,3 +10,5 @@ twit "just committed files to $projectdesc"
 # push commits
 #
 git push
+
+system "$CLI_GOODNESS/sndplay $CLI_GOODNESS/git-goodness/Push_It.mp3 -volume 0.5"
