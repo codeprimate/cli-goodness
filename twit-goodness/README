@@ -1,0 +1,14 @@
+A script for posting status messages to twitter
+
+****************************************
+* upproj 
+****************************************
+
+Simplify (read: automate) 
+
+Usage: twit [status message] 
+
+	########
+		REQUIRED CONFIG
+			see twit_user.txt
+				place here your twitter login and password colon seperated
