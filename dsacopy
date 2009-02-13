@@ -1,0 +1,11 @@
+#!/bin/bash
+# usage: dsacopy <hostname>
+# Bash function to copy SSH DSA public key to a new server
+
+if [[ -z "$1" ]]; then
+  echo "!! You need to enter a hostname in order to send your public key !!" 
+else
+  echo "* Copying SSH public key to server..." 
+  ssh ${1} "mkdir -p ~/.ssh && cat - >> ~/.ssh/authorized_keys2" < ~/.ssh/id_dsa.pub
+  echo "* All done!"
+fi
