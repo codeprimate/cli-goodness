@@ -1,6 +1,5 @@
 #!/usr/bin/ruby
 
-
 sum = 0.0
 queries = 0
 last_time = Time.now
