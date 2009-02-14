@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#
+# open terminal - cd to project - git pull - start autospec
+# open terminal - cd to project - redit - server
+# open firefox to mongrel for project
+#
+
+osascript -e "tell application \"Finder\" to say \"Loading Project $1\""
+
+osascript \
+-e 'tell application "Terminal"' \
+-e 'activate' \
+-e 'with timeout of 1800 seconds' \
+-e "do script with command \"$1; git pull; autospec\"" \
+-e 'end timeout' \
+-e 'end tell'
+
+osascript \
+-e 'tell application "Terminal"' \
+-e 'activate' \
+-e 'with timeout of 1800 seconds' \
+-e "do script with command \"$1; redit; server\"" \
+-e 'end timeout' \
+-e 'end tell'
+
+open http://localhost:3000
