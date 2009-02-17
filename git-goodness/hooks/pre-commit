@@ -9,12 +9,13 @@ html = open(html_path).read
 examples = html.match(/(\d+) examples/)[0].to_i rescue 0  
 failures = html.match(/(\d+) failures/)[0].to_i rescue 0  
 pending = html.match(/(\d+) pending/)[0].to_i rescue 0  
+
+projectdesc = system("$(sed -e '1q' \"$GIT_DIR/description\")")
   
 if failures.zero?  
   puts "0 failures! #{examples} run, #{pending} pending"  
 
-  projectdesc=$(sed -e '1q' "$GIT_DIR/description")
-  twit "committed changes to $projectdesc"
+  system("twit \"committed changes to #{projectdesc}\"")
 
 else  
   puts "\aDID NOT COMMIT YOUR FILES!"  
@@ -22,8 +23,7 @@ else
   puts  
   puts "#{failures} failures! #{examples} run, #{pending} pending"  
 
-  projectdesc=$(sed -e '1q' "$GIT_DIR/description")
-  twit "has failing tests for $projectdesc"
+  system("twit \"has failing tests for #{projectdesc}\"")
 
   exit 1  
 end

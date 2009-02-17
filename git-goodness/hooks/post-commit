@@ -3,12 +3,9 @@
 # push a message to twitter about this commit
 #
 
-projectdesc=$(sed -e '1q' "$GIT_DIR/description")
-twit "just committed files to $projectdesc"
-
 #
 # push commits
 #
 git push
 
-sndplay "$CLI_GOODNESS/git-goodness/Push_It.mp3" -volume 0.5
+# sndplay "$CLI_GOODNESS/git-goodness/Push_It.mp3" -volume 0.5
