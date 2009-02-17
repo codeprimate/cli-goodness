@@ -1,9 +1,0 @@
-#!/bin/bash
-
-#
-# open terminal - cd to project - git pull - run autotest
-# open terminal - cd to project - redit - server
-# open firefox to mongrel for project
-#
-
-~/Library/Scripts/terminal_project.scpt 
