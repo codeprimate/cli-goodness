@@ -6,22 +6,19 @@
 # open firefox to mongrel for project
 #
 
-osascript -e "tell application \"Finder\" to say \"Loading Project $1\""
+osascript -e "tell application \"Finder\" to say \"Loading Project $1\" using \"Cellos\""
 
 osascript \
 -e 'tell application "Terminal"' \
 -e 'activate' \
--e 'with timeout of 1800 seconds' \
--e "do script with command \"$1; git pull; autospec\"" \
--e 'end timeout' \
--e 'end tell'
-
-osascript \
--e 'tell application "Terminal"' \
--e 'activate' \
--e 'with timeout of 1800 seconds' \
--e "do script with command \"$1; redit; server\"" \
--e 'end timeout' \
+-e 'set the bounds of the front window to {150, 0, 900, 1200}' \
+-e "do script \"$1\" in front window" \
+-e 'do script "git pull; autospec" in front window' \
+-e "do script with command \"$1\"" \
+-e 'do script "redit;server" in front window' \
+-e 'set the bounds of the front window to {900, 0, 1680, 1200}' \
 -e 'end tell'
 
 open http://localhost:3000
+
+twit "started working on $1"
