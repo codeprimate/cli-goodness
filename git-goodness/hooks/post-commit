@@ -8,4 +8,12 @@
 #
 git push
 
+#
+# use the included sndplay to play notification aif file
+#
 # sndplay "$CLI_GOODNESS/git-goodness/Push_It.mp3" -volume 0.5
+
+#
+# for mp3 playback sudo port install mpg123
+#
+# mpg123 "$CLI_GOODNESS/git-goodness/Push_It.mp3"
