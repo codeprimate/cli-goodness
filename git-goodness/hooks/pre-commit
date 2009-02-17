@@ -10,7 +10,7 @@ examples = html.match(/(\d+) examples/)[0].to_i rescue 0
 failures = html.match(/(\d+) failures/)[0].to_i rescue 0  
 pending = html.match(/(\d+) pending/)[0].to_i rescue 0  
 
-projectdesc = system("$(sed -e '1q' \"$GIT_DIR/description\")")
+projectdesc = File.read("#{ENV['GIT_DIR']}/description")
   
 if failures.zero?  
   puts "0 failures! #{examples} run, #{pending} pending"  
