@@ -2,28 +2,65 @@
 * mygem 
 ****************************************
 
+	A Helper action for working with gems created with the newgem gem
+
+	Usage: mygem <action> [options] 
+
+	Allowable actions are: 
+	  refresh - will uninstall the gem, refresh the gem manifest, repackage and reinstall
+
+	Options are:
+	    -h, --help                       Show this help message.
+
+
 ****************************************
 * rdbcreate 
 ****************************************
+
+	One operation, Three databases.
+	  <projectname>_development
+	  <projectname>_production
+	  <projectname>_test
+  
+	Usage: rdbcreate [options] <projectname>
+
+	Options are:
+	    -u, --user=name                  User for login if not the current user.
+	    -p, --password[=name]            Password to use when connecting to server. If password is not given it's asked from the tty.
+	    -h, --help                       Show this help message.
 
 ****************************************
 * rdbdrop 
 ****************************************
 
+	One operation, Three databases.
+	  <projectname>_development
+	  <projectname>_production
+	  <projectname>_test
+
+	Usage: rdbdrop [options] <projectname>
+
+	Options are:
+	    -u, --user=name                  User for login if not the current user.
+	    -p, --password[=name]            Password to use when connecting to server. If password is not given it's asked from the tty.
+	    -h, --help                       Show this help message.
+
 ****************************************
 * redit 
 ****************************************
 
+	Cause when opening a rails application in textmate it's good to filter out certain folders (i.e. logs) 
+	Have yoou ever tried to search your application for a word when you have large log files... well, don't
+
+	Also because i don't like to litter my finder windows and such with textmate project files just cd project_dir; redit
+
+	Usage: redit [options]
+
+	Options are:
+	-h, --help                       Show this help message.
+
 ****************************************
 * rexplainlog 
-****************************************
-
-****************************************
-* rplugin
-****************************************
-
-****************************************
-* rpluginsource 
 ****************************************
 
 ****************************************

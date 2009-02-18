@@ -137,6 +137,8 @@ class LogParser
     rhtml = TEMPLATE
     File.new(@outputfilename,"w+").puts((ERB.new rhtml).result(binding))
     puts "Output to => #{@outputfilename}"
+    
+    system("open #{@outputfilename}")
   end
   
   
@@ -153,17 +155,17 @@ class LogParser
   
   
   def note_indexes!(explain_data)
-      x_tables = explain_data[:rows].collect{|r| r[2]}.uniq.sort
-      x_tables.each do |tbl|
+    x_tables = explain_data[:rows].collect{|r| r[2]}.uniq.sort
+    x_tables.each do |tbl|
         if @tables.select{|t| t[:name] == tbl}.size == 0 
           index_result = x = Base.connection.execute("SHOW INDEX FROM #{tbl}")
           tbl_info = {:name => tbl, :info => parse_mysql_result(index_result)}
           @tables << tbl_info
         end
       end
-    rescue 
-      return
-    end
+  rescue 
+    return
+  end
   
   def parse_mysql_result(mr)
     info = {:fields => [], :rows => []}

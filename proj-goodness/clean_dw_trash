@@ -19,7 +19,7 @@ MANDATORY_OPTIONS = %w(  )
 
 parser = OptionParser.new do |opts|
   opts.banner = <<BANNER
-Clean a =directory structure recursively of all svn information evvectively exporting the working copy into itself
+Clean a directory structure recursively of all dreamweaver _notes directories
 
 Usage: #{File.basename($0)} [options]
 

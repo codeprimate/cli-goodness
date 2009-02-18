@@ -29,6 +29,15 @@ Options are:
 * gitplugin 
 ****************************************
 
+	This application is wonderful because...
+
+	Usage: gitplugin [options]
+
+	Options are:
+	    -f, --force                      Force reinstall of existing plugins
+	    -x, --install-external           Install Plugins as svn externals
+	    -h, --help                       Show this help message.
+
 ****************************************
 * gitrm 
 ****************************************

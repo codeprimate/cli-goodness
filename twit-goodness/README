@@ -4,11 +4,10 @@ A script for posting status messages to twitter
 * twit 
 ****************************************
 
-Simplify (read: automate) 
+	send twitter updates from command line
 
-Usage: twit [message] 
+	Usage: twit <message>
 
-	########
-		REQUIRED CONFIG
-			see twit_user.txt
-				place here your twitter login and password colon seperated
+	Options are:
+	    -h, --help                       Show this help message.
+
