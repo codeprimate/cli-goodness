@@ -1,19 +1,30 @@
-#!/bin/sh
+#!/usr/bin/env ruby  
+
+#
+# get last commit message
+#
+b = `git show`
+puts b
+b = b.split("\n")
+
 #
 # push a message to twitter about this commit
 #
+projectdesc = File.read("#{ENV['GIT_DIR']}/description")
+system("twit \"commit: #{b[4]} on project: #{projectdesc}  \"")
 
 #
 # push commits
 #
-git push
+system("git push")
+
+# audio notifiction
+audiofile = "#{ENV['CLI_GOODNESS']}/git-goodness/Push_It.mp3"
 
 #
 # use the included sndplay to play notification aif file
-#
-# sndplay "$CLI_GOODNESS/git-goodness/Push_It.mp3" -volume 0.5
+# system("sndplay '#{audiofile}'")
 
 #
 # for mp3 playback sudo port install mpg123
-#
-# mpg123 "$CLI_GOODNESS/git-goodness/Push_It.mp3"
+system("mpg123 '#{audiofile}'")
