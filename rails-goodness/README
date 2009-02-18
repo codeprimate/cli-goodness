@@ -25,3 +25,21 @@
 ****************************************
 * rpluginsource 
 ****************************************
+
+****************************************
+* work 
+****************************************
+
+	a script to set up my typical project workspace - does all the following
+		opens and positions first terminal window
+			changes to project dir
+			calls git pull
+			calls autospec
+		opens and positions second terminal
+			changes to project dir
+			calls redit
+			calls server
+		opens http://localhost:3000 is default browser
+		sends twitter message "started working on project <projectalias>"
+	
+	Usage: work <projectalias>
