@@ -14,9 +14,6 @@ projectdesc = File.read("#{ENV['GIT_DIR']}/description")
   
 if failures.zero?  
   puts "0 failures! #{examples} run, #{pending} pending"  
-
-  system("twit \"committed changes to #{projectdesc}\"")
-
 else  
   puts "\aDID NOT COMMIT YOUR FILES!"  
   puts "View spec results at #{File.expand_path(html_path)}"  
@@ -24,6 +21,9 @@ else
   puts "#{failures} failures! #{examples} run, #{pending} pending"  
 
   system("twit \"has failing tests for #{projectdesc}\"")
+
+  audiofile = "#{ENV['CLI_GOODNESS']}/git-goodness/Git_Fail.aif"
+  system("sndplay '#{audiofile}'")
 
   exit 1  
 end

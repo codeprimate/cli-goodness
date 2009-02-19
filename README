@@ -1,6 +1,6 @@
 CLI Goodness!
 
-Checkout this and add the following 2 lines to the end of your ~/.bash_login
+Checkout this and add the following 2 lines to the end of your ~/.bash_profile
 Make sure to change the path in the first line.
 
  export CLI_GOODNESS="path/to/cli_goodness"

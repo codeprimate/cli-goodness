@@ -19,12 +19,12 @@ system("twit \"commit: #{b[4]} on project: #{projectdesc}  \"")
 system("git push")
 
 # audio notifiction
-audiofile = "#{ENV['CLI_GOODNESS']}/git-goodness/Push_It.mp3"
+audiofile = "#{ENV['CLI_GOODNESS']}/git-goodness/Git_Push.aif"
 
 #
 # use the included sndplay to play notification aif file
-# system("sndplay '#{audiofile}'")
+system("sndplay '#{audiofile}'")
 
 #
 # for mp3 playback sudo port install mpg123
-system("mpg123 '#{audiofile}'")
+# system("mpg123 '#{audiofile}'")
