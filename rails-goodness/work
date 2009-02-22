@@ -6,7 +6,7 @@
 # open firefox to mongrel for project
 #
 
-osascript -e "tell application \"Finder\" to say \"Loading Project $1\" using \"Cellos\""
+osascript -e "tell application \"Finder\" to say \"working on $1\" using \"Hysterical\""
 
 osascript \
 -e 'tell application "Terminal"' \
@@ -21,4 +21,4 @@ osascript \
 
 open http://localhost:3000
 
-twit "started working on $1"
+twit "working on $1"
