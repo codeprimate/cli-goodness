@@ -1,9 +1,11 @@
 #!/usr/bin/env ruby  
   
 html_path = "doc/spec/report.html"  
-  
-system "rake spec" # run the spec. send progress to screen. save html results to html_path  
-  
+
+if File.exist?("Rakefile")  
+  system "rake spec" # run the spec. send progress to screen. save html results to html_path  
+end  
+
 # find out how many errors were found  
 if File.exist?(html_path)
   html = open(html_path).read  
