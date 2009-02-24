@@ -27,9 +27,9 @@ BANNER
   opts.on("-h", "--help", "Show this help message.") { puts opts; exit }
   opts.parse!(ARGV)
 
-  if MANDATORY_OPTIONS && MANDATORY_OPTIONS.find { |option| OPTIONS[option.to_sym].nil? }
-    puts opts; exit
-  end
+  # if MANDATORY_OPTIONS && MANDATORY_OPTIONS.find { |option| OPTIONS[option.to_sym].nil? }
+  #   puts opts; exit
+  # end
 end
 
 def format_command(msg)
