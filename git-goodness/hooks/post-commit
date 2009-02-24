@@ -16,7 +16,7 @@ system("twit \"commit: #{b[4]} on project: #{projectdesc}  \"")
 #
 # push commits
 #
-system("git push")
+# system("git push")
 
 # audio notifiction
 audiofile = "#{ENV['CLI_GOODNESS']}/git-goodness/Git_Push.aif"
