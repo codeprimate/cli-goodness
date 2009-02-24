@@ -5,12 +5,16 @@ html_path = "doc/spec/report.html"
 system "rake spec" # run the spec. send progress to screen. save html results to html_path  
   
 # find out how many errors were found  
-html = open(html_path).read  
-examples = html.match(/(\d+) examples/)[0].to_i rescue 0  
-failures = html.match(/(\d+) failures/)[0].to_i rescue 0  
-pending = html.match(/(\d+) pending/)[0].to_i rescue 0  
+if File.exist?(html_path)
+  html = open(html_path).read  
+  examples = html.match(/(\d+) examples/)[0].to_i rescue 0  
+  failures = html.match(/(\d+) failures/)[0].to_i rescue 0  
+  pending = html.match(/(\d+) pending/)[0].to_i rescue 0  
 
-projectdesc = File.read("#{ENV['GIT_DIR']}/description")
+  projectdesc = File.read("#{ENV['GIT_DIR']}/description")
+else
+  failures = 0
+end
   
 if failures.zero?  
   puts "0 failures! #{examples} run, #{pending} pending"  
