@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby  
 
-puts "Executing pre-receive hook..."
-
 html_path = "doc/spec/report.html"  
 
 if File.exist?("Rakefile")  

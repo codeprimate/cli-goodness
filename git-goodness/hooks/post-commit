@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby  
 
-puts "Executing post-commit hook..."
-
 #
 # get last commit message
 #
@@ -25,8 +23,8 @@ audiofile = "#{ENV['CLI_GOODNESS']}/git-goodness/Git_Push.aif"
 
 #
 # use the included sndplay to play notification aif file
-system("sndplay '#{audiofile}'")
+system("sndplay '#{audiofile}'") if File.exist?("audiofile")
 
 #
 # for mp3 playback sudo port install mpg123
-# system("mpg123 '#{audiofile}'")
+# system("mpg123 '#{audiofile}'") if File.exist?("audiofile")
