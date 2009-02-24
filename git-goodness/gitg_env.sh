@@ -3,7 +3,8 @@
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
-PS1='\u@\h \w\e[01;32m\]$( parse_git_branch )\e[00m\]\$ '
+
+# PS1='\u@\h \w\e[01;32m\]$( parse_git_branch )\e[00m\]\$ '
 
 #
 # vars used by the gitosis script
