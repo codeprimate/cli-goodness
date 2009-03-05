@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#
+# open terminal - cd to project - git pull - start autospec
+# open terminal - cd to project - redit - server
+# open firefox to mongrel for project
+#
+
+osascript -e "tell application \"Finder\" to say \"working on $1\" using \"Hysterical\""
+
+osascript \
+-e 'tell application "Terminal"' \
+-e 'activate' \
+-e 'set the bounds of the front window to {150, 0, 900, 1200}' \
+-e "do script \"$1\" in front window" \
+-e 'do script "git pull; autospec" in front window' \
+-e "do script with command \"$1\"" \
+-e 'do script "redit;server" in front window' \
+-e 'set the bounds of the front window to {900, 0, 1680, 1200}' \
+-e 'end tell'
+
+open https://masterwebdesign.clientsection.com/clients
+open http://storytraq.masterwebdesign.dyndns.org/projects/
+open http://localhost:3000
+
+twit "working on $1"
