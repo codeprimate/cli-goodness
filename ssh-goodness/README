@@ -1,0 +1,8 @@
+
+****************************************
+* dsacopy 
+****************************************
+
+	a script that streamlines the process of uploading your ssh public key to a remote server
+
+	Usage : dsacopy [host]

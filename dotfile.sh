@@ -1,8 +1,5 @@
 source $CLI_GOODNESS/clig_env.sh
 source $CLI_GOODNESS/clig_aliases.sh
-source $CLI_GOODNESS/clig_alias_bash.sh
-source $CLI_GOODNESS/clig_alias_httpd.sh
-source $CLI_GOODNESS/clig_alias_httpd.sh
 
 export ARDUINO_GOODNESS="$CLI_GOODNESS/arduino-goodness"
 source $ARDUINO_GOODNESS/dotfile.sh

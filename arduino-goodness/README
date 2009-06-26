@@ -1,9 +1,21 @@
 EXECUTABLES
 
-GitBell - hook to git to send message to ring a bell
+****************************************
+* GitBell 
+****************************************
+ - hook to git to send message to ring a bell
 
-serial_read - read serial data from arduino
+****************************************
+* serial_read 
+****************************************
+ - read serial data from arduino
 
-serial_r_g - send red/green signals to arduino
+****************************************
+* serial_r_g 
+****************************************
+ - send red/green signals to arduino
 
-arduino-serial - for serial communication
+****************************************
+* arduino-serial 
+****************************************
+ - for serial communication
