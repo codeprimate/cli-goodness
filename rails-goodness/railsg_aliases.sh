@@ -10,6 +10,7 @@ alias generate='script/generate'
 alias server='script/server'
 alias console='script/console'
 alias specserver='script/spec_server'
+alias runspec='script/spec'
 
 #
 # alias annotate models rake task
