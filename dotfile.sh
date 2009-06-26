@@ -13,6 +13,9 @@ source $PROJ_GOODNESS/dotfile.sh
 export RAILS_GOODNESS="$CLI_GOODNESS/rails-goodness"
 source $RAILS_GOODNESS/dotfile.sh
 
+export SSH_GOODNESS="$CLI_GOODNESS/ssh-goodness"
+source $SSH_GOODNESS/dotfile.sh
+
 export TWIT_GOODNESS="$CLI_GOODNESS/twit-goodness"
 source $TWIT_GOODNESS/dotfile.sh
 
