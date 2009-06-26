@@ -4,6 +4,9 @@ source $CLI_GOODNESS/clig_alias_bash.sh
 source $CLI_GOODNESS/clig_alias_httpd.sh
 source $CLI_GOODNESS/clig_alias_httpd.sh
 
+export ARDUINO_GOODNESS="$CLI_GOODNESS/arduino-goodness"
+source $ARDUINO_GOODNESS/dotfile.sh
+
 export GIT_GOODNESS="$CLI_GOODNESS/git-goodness"
 source $GIT_GOODNESS/dotfile.sh
 

@@ -1,0 +1,45 @@
+#!/usr/bin/env ruby
+#
+#  Created on 2009-03-10.
+#  Copyright (c) 2009. All rights reserved.
+
+#using Ruby/SerialPort library
+#(http://ruby-serialport.rubyforge.org)
+
+require 'rubygems'
+require 'serialport'
+
+module Bell
+  extend self
+ 
+  def ring
+    #params for serial port
+    port_str = "/dev/tty.usbserial-A6006hlr" # may be different for you
+    baud_rate = 9600
+    data_bits = 8
+    stop_bits = 1
+    parity = SerialPort::NONE
+    
+    begin
+      sp = SerialPort.new(port_str, baud_rate, data_bits, stop_bits, parity)
+      
+      sleep 5
+      
+      sp.putc 10
+      
+      sleep 5
+      
+      sp.putc 1
+      
+      sp.close
+    rescue Exception => e
+      puts "No bell to ring."
+      puts e.to_s
+    end
+  end
+end
+
+Bell.ring
+
+
+
