@@ -1,0 +1,24 @@
+#!/usr/bin/ruby
+require 'rubygems'
+require 'twitter'
+
+httpauth = Twitter::HTTPAuth.new('bhedana@gmail.com', 'accnrg69')
+base = Twitter::Base.new(httpauth)
+base.friends_timeline.each do |tweet| 
+  puts ""
+  # puts tweet.inspect
+  puts "#{tweet.user.screen_name} : #{tweet.text}" 
+end
+
+
+# NOT SHOWN: granting access to twitter on website
+# and using request token to generate access token
+# oauth = Twitter::OAuth.new('consumer token', 'consumer secret')
+# oauth.authorize_from_access('access token', 'access secret')
+# 
+# client = Twitter::Base.new(oauth)
+# client.friends_timeline.each  { |tweet| puts tweet.inspect }
+# client.user_timeline.each     { |tweet| puts tweet.inspect }
+# client.replies.each           { |tweet| puts tweet.inspect }
+# 
+# client.update('Heeeyyyyoooo from Twitter Gem!')

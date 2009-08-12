@@ -37,4 +37,4 @@ BANNER
   end
 end
 
-system "mate .git/config .gitignore .gitmodules app/ config/ db/ features/ lib/ public/ vendor/plugins/ spec/ test/ README INSTALL TODO"
+system "mate .git/config .gitignore .gitmodules app/ config/ db/ features/ lib/ public/ vendor/plugins/ vendor/gems/ spec/ test/ README INSTALL TODO"
