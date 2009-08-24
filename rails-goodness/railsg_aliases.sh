@@ -9,7 +9,7 @@ alias plugin='script/plugin'
 alias generate='script/generate'
 alias server='script/server'
 alias console='script/console'
-alias specserver='script/spec_server'
+alias spork='spork rspec'
 alias runspec='script/spec'
 
 #

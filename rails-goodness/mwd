@@ -11,8 +11,11 @@ osascript -e "tell application \"Finder\" to say \"working on $1\" using \"Hyste
 osascript \
 -e 'tell application "Terminal"' \
 -e 'activate' \
--e 'set the bounds of the front window to {150, 0, 900, 1200}' \
 -e "do script \"$1\" in front window" \
+-e 'do script "spork" in front window' \
+-e 'set the bounds of the front window to {120, 0, 500, 300}' \
+-e "do script with command \"$1\"" \
+-e 'set the bounds of the front window to {150, 0, 900, 1200}' \
 -e 'do script "git pull; rake db:migrate; rake db:test:clone_structure; autospec" in front window' \
 -e "do script with command \"$1\"" \
 -e 'do script "redit;server" in front window' \

@@ -44,7 +44,7 @@ if File.exist?("Rakefile")
     exit 1
   end
     
-  if failures.zero?  
+  if failures.zero?
     puts "0 failures! #{examples} run, #{pending} pending"  
   else  
     puts "\aDID NOT COMMIT YOUR FILES!"  
