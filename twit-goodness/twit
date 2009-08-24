@@ -34,8 +34,8 @@ end
 
 def format_command(msg)
   user = File.read(ENV['TWIT_USER_PATH']) if File.exist?(ENV['TWIT_USER_PATH'])
-  command = "curl -u #{user} -d status='#{msg}' http://twitter.com/statuses/update.xml &> /dev/null"
-  # puts command
+  command = "curl -u #{user.chomp} -d status='#{msg}' http://twitter.com/statuses/update.xml &> /dev/null"
+  puts command
   command
 end
 
