@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cd $CLI_GOODNESS
+git pull
+cd -
