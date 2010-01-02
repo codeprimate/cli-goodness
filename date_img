@@ -1,9 +1,22 @@
 #!/bin/bash
 
 # Annotates an image with its date
+#
+# Usage:
+#   date_img input_file.jpg output_file.jpg 'Optional caption'
 
+min_font_size="10"
 img_file=$1
-width=`identify -format %w "${img_file}"`; \
-convert -background '#0008' -fill white -gravity center -size ${width}x30 \
-          caption:"`stat -c "%y" $1 | awk '{print $1}'`" \
-          "${img_file}" +swap -gravity southeast -composite  dated_${img_file}
+out_file=$2
+width=`identify -format %w "${img_file}"`
+height=`identify -format %h "${img_file}"`
+bar_height=`scale=0;echo "a=${min_font_size};b=${height}/45;if(a>b) b=a;b"|bc`
+file_date=`stat -c "%y" $1 | awk '{print $1}'`
+if [ -z "$3" ]; then
+	message="${img_file} :: ${file_date}"
+else
+	message="$3 :: ${file_date}"
+fi	
+convert -background '#0008' -fill white -gravity east -size ${width}x${bar_height} \
+        caption:"${message}" \
+        "${img_file}" +swap -gravity south -composite "${out_file}" 
