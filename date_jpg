@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Annotates an image with its date
+#
+# Usage:
+#   date_img input_file.jpg output_file.jpg 'Optional caption'
+
+type -P convert &>/dev/null || { echo "I require ImageMagick  but it's not installed.  Aborting." >&2; exit 1; }
+type -P jhead &>/dev/null || { echo "I require jhead (http://www.sentex.net/~mwandel/jhead/)  but it's not installed.  Aborting." >&2; exit 1; }
+
+if [ -z $1 ]; then
+	echo "Usage:"
+	echo "    date_img input_file.jpg output_file.jpg 'Optional caption'"
+	exit 1
+fi
+
+bar_height_scale="50"
+min_font_size="10"
+img_file=$1
+out_file=$2
+width=`identify -format %w "${img_file}"`
+height=`identify -format %h "${img_file}"`
+bar_height=`scale=0;echo "a=${min_font_size};b=${height}/${bar_height_scale};if(a>b) b=a;b"|bc`
+file_date=`jhead "$1" | grep -i date | cut -c 16-25 | tail -n 1 | tr ':' '-'`
+
+if [ -z "$3" ]; then
+	message="${img_file} // ${file_date}"
+else
+	message="$3 // ${file_date}"
+fi	
+
+convert -background '#0008' -fill white -gravity east -size ${width}x${bar_height} \
+        caption:"${message}" \
+        "${img_file}" +swap -gravity south -composite "${out_file}" 
