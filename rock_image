@@ -1,0 +1,24 @@
+#!/usr/bin/perl
+#
+# Converts an image for viewing on the
+#  Sansa e2xx series MP3 player running Rockbox Firmware
+# Requires ImageMagick
+
+$new_width = 175;
+$new_height = 210;
+
+$filename = $ARGV[0];
+
+$convert_command = "convert";
+$filename =~ /^(.+)\.[^.]+$/;
+$filename_base = $1; 
+$out_filename = "sansa_$filename_base.jpg"; 
+
+`identify \"$filename\"` =~ / ([0-9]+)x([0-9]+) /;
+$width = $1 + 0;
+$height = $2 + 0;
+
+print "$filename => $out_filename\n";
+if ($width > $height) {	$convert_command .= " -rotate 90"};
+$convert_command .= " -geometry \"${new_width}x${new_height}>\" \"$filename\" \"$out_filename\" ";
+`$convert_command`;
