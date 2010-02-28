@@ -1,0 +1,12 @@
+#!/bin/bash
+
+FILENAME=$1
+BASENAME=`basename $1`
+DIRNAME=`dirname $1`
+FILE_EXTENSION=`echo $BASENAME | awk -F . '{print $NF}'`
+FILE_BASENAME=`basename $BASENAME .$FILE_EXTENSION`
+MOD_DATE=`stat -c %z  $1 | awk '{print $1, $2}' | sed -e 's/ /:/'`
+OUTPUT_FILENAME="$DIRNAME/$MOD_DATE.$FILE_EXTENSION"
+
+echo "$FILENAME => $OUTPUT_FILENAME"
+mv $FILENAME $OUTPUT_FILENAME
